@@ -1,29 +1,57 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --background: #670a4f;
-    --secondaryBackground: #3d0d33;
-    --text: #fff;
+
+:root {
+    --background: #fcf4f4;
+    --secondaryBackground: #d8d7d7;
+    --text: #000000;
     --pink: #ef6fcd;
-    --teal: #a718ff;    
+    --teal: #a718ff;
 }
-body{
+
+body.dark-theme {
+    --background: #2c0c21e7;
+    --secondaryBackground: hsl(313, 100%, 9%);
+    --text: #ffffff;
+    --pink: #ef6fcd;
+    --teal: #a718ff;
+}
+
+body {
     background-color: var(--background);
     color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 120px;
     margin: 120px auto 0 auto;
     max-width: 500px;
 }
-.stats-container{
+
+.theme-toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#themeToggle {
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: var(--pink);
+    color: var(--text);
+    border: none;
+    border-radius: 50%;
+}
+
+.stats-container {
     padding: 30px;
     border-radius: 20px;
     border: 2px solid var(--pink);
@@ -32,24 +60,28 @@ body{
     gap: 50px;
     width: 100%;
 }
-.details{
+
+.details {
     width: 100%;
 }
-#progressBar{
+
+#progressBar {
     width: 100%;
     height: 10px;
     background-color: var(--secondaryBackground);
     border-radius: 5px;
     margin-top: 20px;
 }
-#progress{
+
+#progress {
     width: 0%;
     height: 10px;
     background-color: var(--teal);
     border-radius: 10px;
     transition: all 0.3s ease;
 }
-#numbers{
+
+#numbers {
     width: 100px;
     height: 100px;
     background: var(--pink);
@@ -60,13 +92,15 @@ body{
     font-size: 30px;
     font-weight: bold;
 }
-form{
+
+form {
     margin-top: 60px;
     width: 100%;
     display: flex;
     gap: 10px;
 }
-input{
+
+input {
     flex: 1;
     padding: 16px;
     background: var(--secondaryBackground);
@@ -75,7 +109,8 @@ input{
     outline: none;
     color: var(--text);
 }
-button{
+
+button {
     padding: 16px;
     height: 50px;
     border-radius: 50%;
@@ -90,7 +125,8 @@ button{
     border: none;
     cursor: pointer;
 }
-#task-list{
+
+#task-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -98,7 +134,8 @@ button{
     width: 100%;
     list-style: none;
 }
-.taskItem{
+
+.taskItem {
     width: 100%;
     display: flex;
     background-color: var(--secondaryBackground);
@@ -107,22 +144,34 @@ button{
     justify-content: space-between;
     align-items: center;
 }
-.task{
+
+.task {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.task input{
+
+.task input {
     width: 20px;
     height: 20px;
 }
+
 .completed p {
     text-decoration: line-through;
     color: var(--teal);
 }
-.taskItem img{
+
+.taskItem img {
     width: 24px;
     height: 24px;
     margin: 0 10px;
     cursor: pointer;
+}
+
+.due-date {
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: gray;
+    white-space: nowrap;
 }
